@@ -19,6 +19,7 @@ public class App extends SimpleApplication {
         settings.setCenterWindow(true);
         settings.setWidth(700);
         settings.setHeight(700);
+        settings.setTitle("jME 2048");
 
         App app = new App();
         app.setSettings(settings);
@@ -51,8 +52,8 @@ public class App extends SimpleApplication {
                 audioRenderer,
                 guiViewPort);
         Nifty nifty = niftyDisplay.getNifty();
-        StartScreenController startScreen = new StartScreenController(this);
-        nifty.fromXml("interfaces/main_menu.xml", "start", startScreen);
+        MainMenuController startScreen = new MainMenuController(this);
+        nifty.fromXml("interfaces/menu.xml", "start", startScreen);
 
         // attach the nifty display to the gui view port as a processor
         guiViewPort.addProcessor(niftyDisplay);

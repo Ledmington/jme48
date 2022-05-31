@@ -10,7 +10,7 @@ import de.lessvoid.nifty.screen.ScreenController;
  * "Interfaces/Nifty/HelloJme.xml", which is used in the TestAppStates and
  * TestNiftyGui applications.
  */
-public class StartScreenController implements ScreenController {
+public class MainMenuController implements ScreenController, MainMenu {
 
     final private Application application;
 
@@ -19,7 +19,7 @@ public class StartScreenController implements ScreenController {
      *
      * @param app the Application
      */
-    public StartScreenController(Application app) {
+    public MainMenuController(Application app) {
         this.application = app;
     }
 
@@ -56,8 +56,15 @@ public class StartScreenController implements ScreenController {
      * the user clicks on the flashing orange panel.
      */
     public void quit() {
-        System.out.println("Gabri è gay");
+        System.out.println("Quitting");
         application.stop();
-        System.out.println("Gabri è veramente gay");
+    }
+
+    public void newGame() {
+        System.out.println("Clicked newGame");
+    }
+
+    public void credits() {
+        System.out.println("Clicked Credits");
     }
 }
