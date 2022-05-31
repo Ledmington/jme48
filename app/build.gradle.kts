@@ -14,6 +14,10 @@ dependencies {
     implementation("org.jmonkeyengine:jme3-core:$jme")
     implementation("org.jmonkeyengine:jme3-desktop:$jme")
     implementation("org.jmonkeyengine:jme3-lwjgl:$jme")
+    implementation("org.jmonkeyengine:jme3-niftygui:$jme")
+
+    // needed just for the texture of the example
+    implementation("org.jmonkeyengine:jme3-testdata:$jme")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 }
