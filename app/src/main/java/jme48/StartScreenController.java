@@ -56,6 +56,8 @@ public class StartScreenController implements ScreenController {
      * the user clicks on the flashing orange panel.
      */
     public void quit() {
+        System.out.println("Gabri è gay");
         application.stop();
+        System.out.println("Gabri è veramente gay");
     }
 }
