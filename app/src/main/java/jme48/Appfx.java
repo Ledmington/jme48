@@ -2,6 +2,8 @@ package jme48;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.fxml.FXMLLoader;
@@ -25,14 +27,24 @@ public class Appfx extends Application {
         Parent root;
         try {
             final FXMLLoader loader = new FXMLLoader();
-            FileInputStream fileInputStream = new FileInputStream(new File("src/main/resources/interfaces/example.fxml"));
+            FileInputStream fileInputStream = new FileInputStream("src/main/resources/interfaces/example.fxml");
             root = loader.load(fileInputStream);
         } catch (IOException e) {
             System.out.println("Caught IOException");
             throw new RuntimeException(e);
         }
 
-        Scene scene = new Scene(root, 300, 275);
+        Scene scene = new Scene(root, 300, 300);
+
+        StackPane pane = new StackPane();
+        Image img = new Image("img/gabri.jpg");
+        BackgroundImage bImg = new BackgroundImage(img,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        Background bGround = new Background(bImg);
+        pane.setBackground(bGround);
 
         stage.setTitle("Simple application");
         stage.setScene(scene);
