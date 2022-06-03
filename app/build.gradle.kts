@@ -1,6 +1,7 @@
 plugins {
     java
     application
+    id("org.openjfx.javafxplugin") version "0.0.13"
 }
 
 repositories {
@@ -14,13 +15,18 @@ dependencies {
     implementation("org.jmonkeyengine:jme3-core:$jme")
     implementation("org.jmonkeyengine:jme3-desktop:$jme")
     implementation("org.jmonkeyengine:jme3-lwjgl:$jme")
-    implementation("org.jmonkeyengine:jme3-niftygui:$jme")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 }
 
+javafx {
+    version = "18.0.1"
+    modules("javafx.controls")
+}
+
 application {
-    mainClass.set("jme48.App")
+    //mainClass.set("jme48.App")
+    mainClass.set("jme48.Appfx")
 }
 
 tasks.named<Test>("test") {

@@ -1,9 +1,7 @@
 package jme48;
 
 import com.jme3.app.SimpleApplication;
-import com.jme3.niftygui.NiftyJmeDisplay;
 import com.jme3.system.AppSettings;
-import de.lessvoid.nifty.Nifty;
 
 import java.util.logging.Logger;
 
@@ -46,6 +44,7 @@ public class App extends SimpleApplication {
         cam.setFrustumRight(10);
         cam.setFrustum(0.1f, 100, -10, 10, 10, -10);
 
+        /*
         NiftyJmeDisplay niftyDisplay = NiftyJmeDisplay.newNiftyJmeDisplay(
                 assetManager,
                 inputManager,
@@ -57,7 +56,7 @@ public class App extends SimpleApplication {
 
         // attach the nifty display to the gui view port as a processor
         guiViewPort.addProcessor(niftyDisplay);
-
+*/
         // disable the fly cam
         flyCam.setEnabled(false);
         flyCam.setDragToRotate(true);
