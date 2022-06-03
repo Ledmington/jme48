@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141">
+    <top>
+        <AnchorPane prefHeight="56.0" prefWidth="600.0" style="-fx-background-color: blue;"
+                    BorderPane.alignment="CENTER">
+            <ImageView fitHeight="51.0" fitWidth="79.0" layoutX="23.0" layoutY="20.0" pickOnBounds="true"
+                       preserveRatio="true">
+                <Image url="@/images/gabri.jpg"/>
+            </ImageView>
+            <Label layoutX="118.0" layoutY="36.0" text="Ibot"/>
+        </AnchorPane>
+    </top>
+    <center>
+        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;/images/gabri.jpg&quot;); -fx-background-repeat: stretch;" BorderPane.alignment="CENTER" />
+    </center>
+    <bottom>
+        <HBox BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </BorderPane.margin>
+            <padding>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+            </padding>
+            <TextField prefHeight="25.0" prefWidth="476.0" promptText="Type in here" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets/>
+                </HBox.margin>
+            </TextField>
+            <Region prefHeight="25.0" prefWidth="60.0"/>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="Send">
+                <HBox.margin>
+                    <Insets/>
+                </HBox.margin>
+            </Button>
+        </HBox>
+    </bottom>
+</BorderPane>
