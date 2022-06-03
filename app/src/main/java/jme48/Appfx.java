@@ -2,11 +2,15 @@ package jme48;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.fxml.FXMLLoader;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.util.Objects;
 
 public class Appfx extends Application {
 
@@ -18,13 +22,17 @@ public class Appfx extends Application {
 
     private void initUI(Stage stage) {
         System.out.println("Called initUI");
-        var root = new StackPane();
+        Parent root;
+        try {
+            final FXMLLoader loader = new FXMLLoader();
+            FileInputStream fileInputStream = new FileInputStream(new File("src/main/resources/interfaces/example.fxml"));
+            root = loader.load(fileInputStream);
+        } catch (IOException e) {
+            System.out.println("Caught IOException");
+            throw new RuntimeException(e);
+        }
 
-        var scene = new Scene(root, 300, 250);
-
-        var lbl = new Label("Simple JavaFX application.");
-        lbl.setFont(Font.font("Serif", FontWeight.NORMAL, 20));
-        root.getChildren().add(lbl);
+        Scene scene = new Scene(root, 300, 275);
 
         stage.setTitle("Simple application");
         stage.setScene(scene);

@@ -21,7 +21,7 @@ dependencies {
 
 javafx {
     version = "18.0.1"
-    modules("javafx.controls")
+    modules("javafx.controls", "javafx.fxml")
 }
 
 application {
